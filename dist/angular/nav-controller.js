@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var create_spy_1 = require("../utilities/create-spy");
-var Observable_1 = require("rxjs/Observable");
+var of_1 = require("rxjs/observable/of");
 var view_controller_1 = require("./view-controller");
 var NavControllerMock = /** @class */ (function () {
     function NavControllerMock() {
@@ -83,12 +83,12 @@ var NavControllerMock = /** @class */ (function () {
         instance.length.and.returnValue(0);
         instance.getViews.and.returnValue([]);
         instance.isSwipeBackEnabled.and.returnValue(true);
-        instance.viewDidEnter = Observable_1.Observable.of();
-        instance.viewDidLeave = Observable_1.Observable.of();
-        instance.viewDidLoad = Observable_1.Observable.of();
-        instance.viewWillEnter = Observable_1.Observable.of();
-        instance.viewWillLeave = Observable_1.Observable.of();
-        instance.viewWillUnload = Observable_1.Observable.of();
+        instance.viewDidEnter = of_1.of();
+        instance.viewDidLeave = of_1.of();
+        instance.viewDidLoad = of_1.of();
+        instance.viewWillEnter = of_1.of();
+        instance.viewWillLeave = of_1.of();
+        instance.viewWillUnload = of_1.of();
         return instance;
     };
     return NavControllerMock;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Observable_1 = require("rxjs/Observable");
+var of_1 = require("rxjs/observable/of");
 var create_spy_1 = require("../utilities/create-spy");
 var NetworkMock = /** @class */ (function () {
     function NetworkMock() {
@@ -15,9 +15,9 @@ var NetworkMock = /** @class */ (function () {
         ]);
         instance.type.and.returnValue(networkType || 'wifi');
         instance.downlinkMax.and.returnValue('42');
-        instance.onChange.and.returnValue(Observable_1.Observable.empty());
-        instance.onDisconnect.and.returnValue(Observable_1.Observable.empty());
-        instance.onConnect.and.returnValue(Observable_1.Observable.empty());
+        instance.onChange.and.returnValue(of_1.of({}));
+        instance.onDisconnect.and.returnValue(of_1.of({}));
+        instance.onConnect.and.returnValue(of_1.of({}));
         return instance;
     };
     return NetworkMock;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Observable_1 = require("rxjs/Observable");
+var of_1 = require("rxjs/observable/of");
 var create_spy_1 = require("../utilities/create-spy");
 var NFCMock = /** @class */ (function () {
     function NFCMock() {
@@ -24,19 +24,19 @@ var NFCMock = /** @class */ (function () {
             'stringToBytes',
             'bytesToHexString'
         ]);
-        instance.addNdefListener.and.returnValue(Observable_1.Observable.empty());
-        instance.addTagDiscoveredListener.and.returnValue(Observable_1.Observable.empty());
-        instance.addMimeTypeListener.and.returnValue(Observable_1.Observable.empty());
-        instance.addNdefFormatableListener.and.returnValue(Observable_1.Observable.empty());
-        instance.write.and.returnValue(Observable_1.Observable.empty());
-        instance.makeReadyOnly.and.returnValue(Observable_1.Observable.empty());
-        instance.share.and.returnValue(Observable_1.Observable.empty());
-        instance.unshare.and.returnValue(Observable_1.Observable.empty());
-        instance.erase.and.returnValue(Observable_1.Observable.empty());
-        instance.handover.and.returnValue(Observable_1.Observable.empty());
-        instance.stopHandover.and.returnValue(Observable_1.Observable.empty());
-        instance.showSettings.and.returnValue(Observable_1.Observable.empty());
-        instance.enabled.and.returnValue(Observable_1.Observable.empty());
+        instance.addNdefListener.and.returnValue(of_1.of({}));
+        instance.addTagDiscoveredListener.and.returnValue(of_1.of({}));
+        instance.addMimeTypeListener.and.returnValue(of_1.of({}));
+        instance.addNdefFormatableListener.and.returnValue(of_1.of({}));
+        instance.write.and.returnValue(of_1.of({}));
+        instance.makeReadyOnly.and.returnValue(of_1.of({}));
+        instance.share.and.returnValue(of_1.of({}));
+        instance.unshare.and.returnValue(of_1.of({}));
+        instance.erase.and.returnValue(of_1.of({}));
+        instance.handover.and.returnValue(of_1.of({}));
+        instance.stopHandover.and.returnValue(of_1.of({}));
+        instance.showSettings.and.returnValue(of_1.of({}));
+        instance.enabled.and.returnValue(of_1.of({}));
         instance.bytesToString.and.returnValue('');
         instance.stringToBytes.and.returnValue([]);
         instance.bytesToHexString.and.returnValue('');

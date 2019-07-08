@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var rxjs_1 = require("rxjs");
+var of_1 = require("rxjs/observable/of");
 var nav_params_1 = require("./nav-params");
 var create_spy_1 = require("../utilities/create-spy");
 var ViewControllerMock = /** @class */ (function () {
@@ -84,12 +84,12 @@ var ViewControllerMock = /** @class */ (function () {
         instance.length.and.returnValue(0);
         instance.getViews.and.returnValue([]);
         instance.isSwipeBackEnabled.and.returnValue(true);
-        instance.viewDidEnter = rxjs_1.Observable.of();
-        instance.viewDidLeave = rxjs_1.Observable.of();
-        instance.viewDidLoad = rxjs_1.Observable.of();
-        instance.viewWillEnter = rxjs_1.Observable.of();
-        instance.viewWillLeave = rxjs_1.Observable.of();
-        instance.viewWillUnload = rxjs_1.Observable.of();
+        instance.viewDidEnter = of_1.of();
+        instance.viewDidLeave = of_1.of();
+        instance.viewDidLoad = of_1.of();
+        instance.viewWillEnter = of_1.of();
+        instance.viewWillLeave = of_1.of();
+        instance.viewWillUnload = of_1.of();
     };
     ViewControllerMock.instance = function () {
         var instance = create_spy_1.createSpyObj('ViewController', [
@@ -127,12 +127,12 @@ var ViewControllerMock = /** @class */ (function () {
             '_setFooter',
             '_setIONContentRef'
         ]);
-        instance.willEnter.and.returnValue(rxjs_1.Observable.of({}));
-        instance.didEnter.and.returnValue(rxjs_1.Observable.of({}));
-        instance.willLeave.and.returnValue(rxjs_1.Observable.of({}));
-        instance.didLeave.and.returnValue(rxjs_1.Observable.of({}));
-        instance.willUnload.and.returnValue(rxjs_1.Observable.of({}));
-        instance.didUnload.and.returnValue(rxjs_1.Observable.of({}));
+        instance.willEnter.and.returnValue(of_1.of({}));
+        instance.didEnter.and.returnValue(of_1.of({}));
+        instance.willLeave.and.returnValue(of_1.of({}));
+        instance.didLeave.and.returnValue(of_1.of({}));
+        instance.willUnload.and.returnValue(of_1.of({}));
+        instance.didUnload.and.returnValue(of_1.of({}));
         instance.dismiss.and.returnValue(Promise.resolve());
         instance.onDidDismiss.and.returnValue(Promise.resolve());
         instance.onWillDismiss.and.returnValue(Promise.resolve());
@@ -144,7 +144,7 @@ var ViewControllerMock = /** @class */ (function () {
         instance.contentRef.and.returnValue(Promise.resolve());
         instance.hasNavbar.and.returnValue(true);
         instance.index.and.returnValue(true);
-        instance.subscribe.and.returnValue(rxjs_1.Observable.of({}));
+        instance.subscribe.and.returnValue(of_1.of({}));
         instance.getNav.and.returnValue({});
         instance.getIONContent.and.returnValue({});
         instance['writeReady'] = {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Observable_1 = require("rxjs/Observable");
+var of_1 = require("rxjs/observable/of");
 var create_spy_1 = require("../utilities/create-spy");
 var KeyboardMock = /** @class */ (function () {
     function KeyboardMock() {
@@ -14,8 +14,8 @@ var KeyboardMock = /** @class */ (function () {
             'onKeyboardShow',
             'onKeyboardHide'
         ]);
-        instance.onKeyboardShow.and.returnValue(Observable_1.Observable.empty());
-        instance.onKeyboardHide.and.returnValue(Observable_1.Observable.empty());
+        instance.onKeyboardShow.and.returnValue(of_1.of({}));
+        instance.onKeyboardHide.and.returnValue(of_1.of({}));
         return instance;
     };
     return KeyboardMock;
