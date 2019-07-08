@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 import { createSpyObj } from '../utilities/create-spy';
 
 export class ThreeDeeTouchMock {
@@ -12,8 +12,8 @@ export class ThreeDeeTouchMock {
             'disableLinkPreview'
         ]);
         instance.isAvailable.and.returnValue(Promise.resolve(true));
-        instance.watchForTouches.and.returnValue(Observable.of({}));
-        instance.onHomeIconPressed.and.returnValue(Observable.empty());
+        instance.watchForTouches.and.returnValue(of({}));
+        instance.onHomeIconPressed.and.returnValue(of({}));
 
         return instance;
     }

@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 import { createSpyObj } from '../utilities/create-spy';
 
 export class NFCMock {
@@ -21,19 +21,19 @@ export class NFCMock {
             'stringToBytes',
             'bytesToHexString'
         ]);
-        instance.addNdefListener.and.returnValue(Observable.empty());
-        instance.addTagDiscoveredListener.and.returnValue(Observable.empty());
-        instance.addMimeTypeListener.and.returnValue(Observable.empty());
-        instance.addNdefFormatableListener.and.returnValue(Observable.empty());
-        instance.write.and.returnValue(Observable.empty());
-        instance.makeReadyOnly.and.returnValue(Observable.empty());
-        instance.share.and.returnValue(Observable.empty());
-        instance.unshare.and.returnValue(Observable.empty());
-        instance.erase.and.returnValue(Observable.empty());
-        instance.handover.and.returnValue(Observable.empty());
-        instance.stopHandover.and.returnValue(Observable.empty());
-        instance.showSettings.and.returnValue(Observable.empty());
-        instance.enabled.and.returnValue(Observable.empty());
+        instance.addNdefListener.and.returnValue(of({}));
+        instance.addTagDiscoveredListener.and.returnValue(of({}));
+        instance.addMimeTypeListener.and.returnValue(of({}));
+        instance.addNdefFormatableListener.and.returnValue(of({}));
+        instance.write.and.returnValue(of({}));
+        instance.makeReadyOnly.and.returnValue(of({}));
+        instance.share.and.returnValue(of({}));
+        instance.unshare.and.returnValue(of({}));
+        instance.erase.and.returnValue(of({}));
+        instance.handover.and.returnValue(of({}));
+        instance.stopHandover.and.returnValue(of({}));
+        instance.showSettings.and.returnValue(of({}));
+        instance.enabled.and.returnValue(of({}));
         instance.bytesToString.and.returnValue('');
         instance.stringToBytes.and.returnValue([]);
         instance.bytesToHexString.and.returnValue('');

@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { of } from 'rxjs/observable/of';
 import { NavParamsMock } from './nav-params';
 import { NavControllerMock } from './nav-controller';
 import { createSpyObj } from '../utilities/create-spy';
@@ -87,12 +87,12 @@ export class ViewControllerMock {
 		instance.length.and.returnValue(0);
 		instance.getViews.and.returnValue([]);
 		instance.isSwipeBackEnabled.and.returnValue(true);
-		instance.viewDidEnter = Observable.of();
-		instance.viewDidLeave = Observable.of();
-		instance.viewDidLoad = Observable.of();
-		instance.viewWillEnter = Observable.of();
-		instance.viewWillLeave = Observable.of();
-		instance.viewWillUnload = Observable.of();
+		instance.viewDidEnter = of();
+		instance.viewDidLeave = of();
+		instance.viewDidLoad = of();
+		instance.viewWillEnter = of();
+		instance.viewWillLeave = of();
+		instance.viewWillUnload = of();
 	}
 
 	public static instance(): any {
@@ -133,12 +133,12 @@ export class ViewControllerMock {
 			'_setIONContentRef'
 		]);
 
-		instance.willEnter.and.returnValue(Observable.of({}));
-		instance.didEnter.and.returnValue(Observable.of({}));
-		instance.willLeave.and.returnValue(Observable.of({}));
-		instance.didLeave.and.returnValue(Observable.of({}));
-		instance.willUnload.and.returnValue(Observable.of({}));
-		instance.didUnload.and.returnValue(Observable.of({}));
+		instance.willEnter.and.returnValue(of({}));
+		instance.didEnter.and.returnValue(of({}));
+		instance.willLeave.and.returnValue(of({}));
+		instance.didLeave.and.returnValue(of({}));
+		instance.willUnload.and.returnValue(of({}));
+		instance.didUnload.and.returnValue(of({}));
 		instance.dismiss.and.returnValue(Promise.resolve());
 		instance.onDidDismiss.and.returnValue(Promise.resolve());
 		instance.onWillDismiss.and.returnValue(Promise.resolve());
@@ -150,7 +150,7 @@ export class ViewControllerMock {
 		instance.contentRef.and.returnValue(Promise.resolve());
 		instance.hasNavbar.and.returnValue(true);
 		instance.index.and.returnValue(true);
-		instance.subscribe.and.returnValue(Observable.of({}));
+		instance.subscribe.and.returnValue(of({}));
 		instance.getNav.and.returnValue({});
 		instance.getIONContent.and.returnValue({});
 

@@ -1,5 +1,5 @@
 import {Observable}           from 'rxjs/Observable';
-import {ArrayObservable}      from 'rxjs/observable/ArrayObservable';
+import { of } from 'rxjs/observable/of';
 import { createSpyObj } from '../utilities/create-spy';
 import {NavControllerMock}    from './nav-controller';
 
@@ -30,12 +30,12 @@ export class AppMock {
         instance.getRootNavs.and.returnValue(navCtrl || [NavControllerMock.instance()]);
         instance.getRootNavById.and.returnValue(navCtrl || NavControllerMock.instance());
         instance.isScrolling.and.returnValue(false);
-        instance.viewDidEnter.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewDidLoad.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewDidLeave.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewWillEnter.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewWillLeave.and.returnValue(viewObservable || ArrayObservable.of(undefined));
-        instance.viewWillUnload.and.returnValue(viewObservable || ArrayObservable.of(undefined));
+        instance.viewDidEnter.and.returnValue(viewObservable || of(undefined));
+        instance.viewDidLoad.and.returnValue(viewObservable || of(undefined));
+        instance.viewDidLeave.and.returnValue(viewObservable || of(undefined));
+        instance.viewWillEnter.and.returnValue(viewObservable || of(undefined));
+        instance.viewWillLeave.and.returnValue(viewObservable || of(undefined));
+        instance.viewWillUnload.and.returnValue(viewObservable || of(undefined));
 
         return instance;
     }
