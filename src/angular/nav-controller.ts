@@ -98,7 +98,7 @@ export class NavControllerMock {
         instance.navigateForward.and.returnValue(Promise.resolve());
         instance.navigateBack.and.returnValue(Promise.resolve());
         instance.navigateRoot.and.returnValue(Promise.resolve());
-        
+
         return instance;
     }
 }

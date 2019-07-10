@@ -52,7 +52,10 @@ var NavControllerMock = /** @class */ (function () {
             'viewDidLoad',
             'viewWillEnter',
             'viewWillLeave',
-            'viewWillUnload'
+            'viewWillUnload',
+            'navigateForward',
+            'navigateBack',
+            'navigateRoot',
         ]);
         instance.goToRoot.and.returnValue(Promise.resolve());
         instance.initPane.and.returnValue(1);
@@ -89,6 +92,10 @@ var NavControllerMock = /** @class */ (function () {
         instance.viewWillEnter = of_1.of();
         instance.viewWillLeave = of_1.of();
         instance.viewWillUnload = of_1.of();
+        // new methods for ionic4
+        instance.navigateForward.and.returnValue(Promise.resolve());
+        instance.navigateBack.and.returnValue(Promise.resolve());
+        instance.navigateRoot.and.returnValue(Promise.resolve());
         return instance;
     };
     return NavControllerMock;
