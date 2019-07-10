@@ -6,8 +6,12 @@ var ModalControllerMock = /** @class */ (function () {
     function ModalControllerMock() {
     }
     ModalControllerMock.instance = function (modalMock) {
-        var instance = create_spy_1.createSpyObj('ModalController', ['create']);
+        var instance = create_spy_1.createSpyObj('ModalController', [
+            'create',
+            'present',
+        ]);
         instance.create.and.returnValue(modalMock || modal_1.ModalMock.instance());
+        instance.present.and.returnValue(modalMock || modal_1.ModalMock.instance());
         return instance;
     };
     return ModalControllerMock;
