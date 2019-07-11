@@ -6,9 +6,11 @@ export class ModalControllerMock {
         let instance = createSpyObj('ModalController', [
             'create',
             'present',
+            'dismiss',
         ]);
         instance.create.and.returnValue(modalMock || ModalMock.instance());
         instance.present.and.returnValue(modalMock || ModalMock.instance());
+        instance.dismiss.and.returnValue(Promise.resolve());
 
         return instance;
     }
