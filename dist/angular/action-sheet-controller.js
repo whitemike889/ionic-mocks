@@ -6,8 +6,9 @@ var ActionSheetControllerMock = /** @class */ (function () {
     function ActionSheetControllerMock() {
     }
     ActionSheetControllerMock.instance = function (actionSheet) {
-        var instance = create_spy_1.createSpyObj('ActionSheetController', ['create']);
+        var instance = create_spy_1.createSpyObj('ActionSheetController', ['create', 'present']);
         instance.create.and.returnValue(actionSheet || action_sheet_1.ActionSheetMock.instance());
+        instance.present.and.returnValue(Promise.resolve());
         return instance;
     };
     return ActionSheetControllerMock;
