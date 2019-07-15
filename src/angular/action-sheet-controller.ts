@@ -4,9 +4,8 @@ import { ActionSheetMock } from './action-sheet';
 export class ActionSheetControllerMock {
     public static instance(actionSheet?: ActionSheetMock): any {
 
-        let instance = createSpyObj('ActionSheetController', ['create', 'present']);
+        let instance = createSpyObj('ActionSheetController', ['create']);
         instance.create.and.returnValue(actionSheet || ActionSheetMock.instance());
-        instance.present.and.returnValue(Promise.resolve());
 
         return instance;
     }
